@@ -21,11 +21,16 @@ public class hibernate {
 	private Configuration cfg = new Configuration().configure();
 	
 	public void sesion() {
-		ArrayList<Modulo> aux = new ArrayList<Modulo>();
+		/*Este ArrayList guarda el contenido del objeto Modulo 
+		para ser añadido todo al atributo modulos de la clase Alumno*/
+		ArrayList<Modulo> aux = new ArrayList<Modulo>(); 
+		
+		//Inicio de la sesión
 		SessionFactory sf = cfg.buildSessionFactory(new StandardServiceRegistryBuilder().configure().build());
 		Session sesion = sf.openSession();
 		Transaction transacion = sesion.beginTransaction(); 
 		{
+			//Tabla Modulo
 			Modulo modulo = new Modulo();
 			modulo.setNombre("Interfaces");
 			modulo.setCodigo(9);
@@ -38,6 +43,7 @@ public class hibernate {
 				e.printStackTrace();
 			}
 		
+			//Tabla Profesor
 			Profesor profesor = new Profesor();
 			profesor.setNombre("Manolo");
 			profesor.setSexo('M');
@@ -49,6 +55,7 @@ public class hibernate {
 				e.printStackTrace();
 			}
 			
+			//Tabla Alumno
 			Alumno alumno = new Alumno();
 			alumno.setNombre("Marta");
 			alumno.setNacionalidad("Española");
@@ -63,11 +70,13 @@ public class hibernate {
 				e.printStackTrace();
 			}
 		}
+		
 		transacion.commit();
 		sesion.close();
 		sf.close();
 	}
 	
+	//Esta función se encarga de escribir el contenido de los objetos en archivos binarios
 	public<O> void backup(String fileName, O objeto) throws IOException {
 		FileOutputStream bin = new FileOutputStream(fileName,true);
 		ObjectOutputStream obj = new ObjectOutputStream(bin);

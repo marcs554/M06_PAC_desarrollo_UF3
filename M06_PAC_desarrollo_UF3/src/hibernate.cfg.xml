@@ -9,8 +9,7 @@
 		<property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
 		<property name="connection.username">Marcos</property>
 		<property name="connection.password">familia</property>
-		<!-- Antes de enviarlo a github hay que cambiar el puerto a 3309 -->
-		<property name="connection.url">jdbc:mariadb://127.0.0.1:10036/clase</property>
+		<property name="connection.url">jdbc:mariadb://127.0.0.1:3309/clase</property>
 		<property name="hbm2ddl.auto">create</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
