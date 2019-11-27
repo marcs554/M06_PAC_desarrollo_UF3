@@ -7,15 +7,15 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
-		<property name="connection.username">nombre_alumno</property>
+		<property name="connection.username">Marcos</property>
 		<property name="connection.password">familia</property>
 		<!-- Antes de enviarlo a github hay que cambiar el puerto a 3309 -->
-		<property name="connection.url">jdbc:mariadb://127.0.0.1://10036/clase</property>
+		<property name="connection.url">jdbc:mariadb://127.0.0.1:10036/clase</property>
 		<property name="hbm2ddl.auto">create</property>
 		<property name="hibernate.show_sql">true</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="alumno.hbm.xml"/>
-		<property name="profesor.hbm.xml"/>
-		<property name="modulo.hbm.xml"/>	
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<mapping resource="modulo.hbm.xml"/>
+		<mapping resource="profesor.hbm.xml"/>	
+		<mapping resource="alumno.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration> 

@@ -12,6 +12,7 @@
 		</id>
 		<property name="nombre"/>
 		<property name="codigo"/>
+		
 	</class>
 </hibernate-mapping>
 

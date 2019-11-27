@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class Modulo implements Serializable {
 	private long id;
 	private String nombre;
-	private String codigo;
+	private int codigo;
 	
 	public Modulo() {
 		super();
 	}
 	
-	public Modulo(long id, String nombre, String codigo) {
+	public Modulo(long id, String nombre, int codigo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -26,7 +26,7 @@ public class Modulo implements Serializable {
 	
 	public void setNombre(String nombre) {this.nombre = nombre;}
 	
-	public String getCodigo() {return codigo;}
+	public int getCodigo() {return codigo;}
 	
-	public void setCodigo(String codigo) {this.codigo = codigo;}
+	public void setCodigo(int codigo) {this.codigo = codigo;}
 }

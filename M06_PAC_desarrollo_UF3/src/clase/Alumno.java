@@ -1,7 +1,7 @@
 package clase;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Alumno implements Serializable {
 	private long id;
@@ -9,13 +9,14 @@ public class Alumno implements Serializable {
 	private String nacionalidad;
 	private int edad;
 	private char sexo;
-	private ArrayList<Modulo> modulos = new ArrayList<Modulo>();
+	private List<Modulo> modulos;
+
 	
 	public Alumno() {
 		super();
 	}
 
-	public Alumno(long id, String nombre, String nacionalidad, int edad, char sexo, ArrayList<Modulo> modulos) {
+	public Alumno(long id, String nombre, String nacionalidad, int edad, char sexo, List<Modulo> modulos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -45,7 +46,8 @@ public class Alumno implements Serializable {
 	
 	public void setSexo(char sexo) {this.sexo = sexo;}
 	
-	public ArrayList<Modulo> getModulos() {return modulos;}
+	public List<Modulo> getModulos() {return modulos;}
 
-	public void setModulos(ArrayList<Modulo> modulos) {this.modulos = modulos;}
+	public void setModulos(List<Modulo> modulo) {this.modulos = modulo;}
+	
 }

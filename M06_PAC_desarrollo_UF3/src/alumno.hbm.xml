@@ -14,6 +14,10 @@
 		<property name="nacionalidad"/>
 		<property name="edad"/>
 		<property name="sexo"/>
-		<property name="modulos"/>
+		<list name="modulos" cascade="save-update" table="Alumno_Modulo">
+			<key column="id" foreign-key="fk_idmodulo"/>
+			<list-index column="codigo"/>
+			<many-to-many class="clase.Modulo" column="id_modulos"/>
+		</list>
 	</class>
 </hibernate-mapping>
